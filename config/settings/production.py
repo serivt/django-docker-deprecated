@@ -14,3 +14,15 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', ['*'])
 DATABASES = {
     'default': dj_database_url.config()
 }
+
+# Static files (CSS, JavaScript, Images)
+
+ROOT_PATH = os.environ.get('ROOT_PATH', BASE_DIR.ancestor(1))
+
+STATIC_ROOT = '%sstatic/' % ROOT_PATH
+
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = '%smedia/' % ROOT_PATH
+
+MEDIA_URL = '/media/'
